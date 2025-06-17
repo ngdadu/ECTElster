@@ -109,6 +109,7 @@ BEGIN_MESSAGE_MAP(CElsterDlg, CDialog)
 	ON_CBN_SELCHANGE(IDC_EINKUNFTSART, &CElsterDlg::OnCbnSelchangeEinkunftsart)
 	ON_CBN_SELCHANGE(IDC_RECHTSFORM, &CElsterDlg::OnCbnSelchangeRechtsform)
 	ON_CBN_SELCHANGE(IDC_BETRIEBSINHABER, &CElsterDlg::OnCbnSelchangeBetriebsinhaber)
+	ON_BN_CLICKED(IDC_SICHERHEITSSTICK, &CElsterDlg::OnBnClickedSicherheitsstick)
 END_MESSAGE_MAP()
 
 
@@ -1061,4 +1062,21 @@ void CElsterDlg::OnCbnSelchangeRechtsform()
 void CElsterDlg::OnCbnSelchangeBetriebsinhaber()
 {
 	SetTimer(2, 1, NULL);
+}
+
+void CElsterDlg::OnBnClickedSicherheitsstick()
+{
+	if (AfxMessageBox(_T("'G&D Starsign USB Token S' benutzen?\r\n\r\n\
+Hinweis 1: Um den 'G&D Starsign USB Token S' rein mit dem Elster-Plugin zu verwenden, \
+braucht der unter https://www.sicherheitsstick.de genannte ElsterAuthenticator und die .reg-Datei mit den \
+optionalen Registry-Einträgen nicht installiert zu werden. \
+Es muss lediglich der Dummy-Wert 'aetpkss1.dll' in das Feld eingegeben werden, damit der Sicherheitsstick benutzt werden kann. \r\n\r\n\
+Hinweis 2: Um den veralteten 'G&D Starsign USB Token' (ohne 'S') und andere Signaturkarten zu benutzen, \
+bitte den Durchsuchen-Knopf klicken und unten rechts '.dll' als Dateityp auswählen; \
+dann die zur Signaturkarte (bzw. Sicherheitsstick) gehörige Treiberdatei auswählen."), MB_YESNO) == IDYES)
+	{
+		m_Datei = _T("aetpkss1.dll");  // Dummy-Wert für den Sicherheitsstick
+		UpdateData(FALSE);
+		GetDlgItem(IDC_PASSWORT)->SetFocus();
+	}
 }

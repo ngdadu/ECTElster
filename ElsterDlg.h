@@ -131,4 +131,5 @@ public:
 	afx_msg void OnCbnSelchangeEinkunftsart();
 	afx_msg void OnCbnSelchangeRechtsform();
 	afx_msg void OnCbnSelchangeBetriebsinhaber();
+	afx_msg void OnBnClickedSicherheitsstick();
 };
