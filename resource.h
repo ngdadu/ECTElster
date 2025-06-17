@@ -52,6 +52,8 @@
 #define IDC_SIGNATUROPTION1             230
 #define IDC_BETRIEBSINHABER             230
 #define IDC_SIGNATUROPTION2             231
+#define IDC_DURCHSUCHEN2                231
+#define IDC_SICHERHEITSSTICK            231
 #define IDC_SIGNATUROPTION3             232
 #define IDC_SIGNATUROPTION4             233
 #define IDC_GRUNDSTUECKSVERAEUSSERUNGEN_STATIC 233
