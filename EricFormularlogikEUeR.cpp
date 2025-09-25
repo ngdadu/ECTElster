@@ -58,7 +58,11 @@ LPXNode CEricFormularlogikEUeR::ZuXmlBaumHinzufuegen(LPXNode pEricXml, const CSt
 		}
 	}
 	if (node != pEricXml)  // wenn Reise durch den Baum erfolgreich, dann Wert eintragen
+	{
 		node->value = csFeldwert;
+		if (node->name == "E6007202")
+			m_GewinnMerken = csFeldwert;	// für Logausgabe merken
+	}
 
 	return node;
 }
