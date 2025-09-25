@@ -771,7 +771,11 @@ void CElsterDlg::ERiC(BOOL bNurValidieren = FALSE)
 	}		
 	if (NormaleSteuernummer.GetLength() != 10 && NormaleSteuernummer.GetLength() != 11)
 	{
-		AfxMessageBox(_T("Die Steuernummer in den EC&T-Einstellungen ist ungültig. Es wird eine 10- bzw. 11-stellige Steuernummer benötigt."));
+		if (m_csBetrieb != "")
+			AfxMessageBox(_T("Die Steuernummer des Betriebs ist ungültig. Es wird eine 10- bzw. 11-stellige Steuernummer benötigt. \
+(Bitte auf den Knopf 'Betrieb' im Filter-Menübereich klicken, den Betrieb auswählen und den Knopf 'Betriebsspezifische Daten' drücken.)"));
+		else
+			AfxMessageBox(_T("Die Steuernummer in den EC&T-Einstellungen ist ungültig. Es wird eine 10- bzw. 11-stellige Steuernummer benötigt."));
 		return;
 	}
 	char Pruefziffer_vor_Steuernummerumstellung[1000];
