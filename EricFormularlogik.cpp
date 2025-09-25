@@ -641,7 +641,7 @@ CString CEricFormularlogik::Render(
 	{	// erfolgreich übertragen
 		csReturn = "OK";
 
-		/*	ticketPufferHandle = EricRueckgabepufferErzeugen();
+			ticketPufferHandle = EricRueckgabepufferErzeugen();
 			threturncodePufferHandle = EricRueckgabepufferErzeugen();
 			therrormessagePufferHandle = EricRueckgabepufferErzeugen();
 			threturncodeerrormessagePufferHandle = EricRueckgabepufferErzeugen();
@@ -652,8 +652,8 @@ CString CEricFormularlogik::Render(
 												  threturncodePufferHandle, therrormessagePufferHandle,
 												  threturncodeerrormessagePufferHandle);
 
-			AfxMessageBox(_T("Transferticket: ") + (CString)EricRueckgabepufferInhalt(ticketPufferHandle) + _T(" ") + (CString)EricRueckgabepufferInhalt(threturncodePufferHandle) + _T(" ") + (CString)EricRueckgabepufferInhalt(therrormessagePufferHandle) + _T(" ") + (CString)EricRueckgabepufferInhalt(threturncodeerrormessagePufferHandle));
-		*/
+			// AfxMessageBox(_T("Transferticket: ") + (CString)EricRueckgabepufferInhalt(ticketPufferHandle) + _T(" ") + (CString)EricRueckgabepufferInhalt(threturncodePufferHandle) + _T(" ") + (CString)EricRueckgabepufferInhalt(therrormessagePufferHandle) + _T(" ") + (CString)EricRueckgabepufferInhalt(threturncodeerrormessagePufferHandle));
+		
 	}
 
 	if (*EricRueckgabepufferInhalt(serverantwortPufferHandle))
@@ -784,7 +784,7 @@ Menü->Ansicht->Einstellungen->pers.Daten und den entsprechenden Wert ändern.");
 						Haupttext += _T("\r\n\r\n");
 					}
 				}
-				/*else	// Transfer Ticket ausgeben
+				else	// Transfer Ticket ausgeben
 				{
 					int nPosAnfang = Antwort.Find(_T("<TransferTicket>"), 0);
 					int nPosEnde = Antwort.Find(_T("</TransferTicket>"), nPosAnfang);
@@ -793,7 +793,7 @@ Menü->Ansicht->Einstellungen->pers.Daten und den entsprechenden Wert ändern.");
 						nPosAnfang += 16;
 						Haupttext = _T("Umsatzsteuervoranmeldung wurde erfolgreich übertragen.\r\nTransfer-Ticket (wichtig für Nachfragen und Recherchen beim Finanzamt): ") + (TransferTicket = Antwort.Mid(nPosAnfang, nPosEnde-nPosAnfang)) + _T("\r\n(Hinweis: Das Ticket wurde im EC&T-Dokument gespeichert und kann jederzeit mit 'Zeige Log' angezeigt werden.)\r\n\r\n");
 					}
-				}*/
+				}
 
 				// Infotexte anhängen
 				{
